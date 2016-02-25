@@ -51,6 +51,7 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in stringset nu
 let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf = '~/Documents/git/dotfiles/.ycm_extra_conf.py'
 set t_Co=256
 set laststatus=2
 set nu
