@@ -15,6 +15,9 @@ Plugin 'tomasr/molokai'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'othree/html5.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
 " The following are examples of different formats supported.
 " 
 " Keep Plugin commands between vundle#begin/end.
@@ -52,8 +55,22 @@ let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in stringset nu
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf = '~/Documents/git/dotfiles/.ycm_extra_conf.py'
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
 set t_Co=256
 set laststatus=2
 set nu
-colorscheme zenburn
+colorscheme babymate256
 " Put your non-Plugin stuff after this line
