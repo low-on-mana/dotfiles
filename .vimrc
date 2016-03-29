@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'othree/html5.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
 " The following are examples of different formats supported.
 " 
 " Keep Plugin commands between vundle#begin/end.
@@ -69,6 +70,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
+nnoremap Q i<CR><Esc>k$
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
