@@ -8,7 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tomasr/molokai'
@@ -21,6 +21,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
 " 
@@ -81,7 +83,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/]\.(git|svn)$',
+			\ 'dir':  '\v[\/](node_modules|target|dist)|(\.(git|svn|swp))$',
 			\ 'file': '\v\.(cache|exe|so|dll)$',
 			\ }
 
@@ -92,14 +94,16 @@ let g:ctrlp_custom_ignore = {
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_javascript_checkers = ['eslint']
 
 " let g:ruby_debugger_debug_mode = 1
 " let g:ruby_debugger_spec_path = 'rspec'
 " let g:ruby_debugger_default_script = 'rails s -p4567'
 " let g:ruby_debugger_no_maps = 1
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 nnoremap Q i<CR><Esc>k$
 nnoremap <F2> :set invpaste paste?<CR>
@@ -115,7 +119,7 @@ autocmd Filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " # for js/coffee/jade files, 4 spaces
-autocmd Filetype javascript setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype coffeescript setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd Filetype jade setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 set t_Co=256
