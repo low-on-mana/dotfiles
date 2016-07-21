@@ -96,8 +96,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d' "Background server for eslint
+let g:syntastic_ruby_exec = '/Users/anoop/.rbenv/versions/2.3.1/bin/ruby'
 
 " let g:ruby_debugger_debug_mode = 1
 " let g:ruby_debugger_spec_path = 'rspec'
@@ -105,18 +107,33 @@ let g:syntastic_javascript_checkers = ['eslint']
 " let g:ruby_debugger_no_maps = 1
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
+
+let mapleader=";"
+inoremap <leader>w <Esc>:w<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
+nnoremap <leader>q ZQ
+nnoremap <leader>= gg=G
+nnoremap <leader>h <h
+nnoremap <leader>l >h
+inoremap <leader><leader> <Esc>
+
+"NonLeader bindings
 nnoremap Q i<CR><Esc>k$
 nnoremap <F2> :set invpaste paste?<CR>
+
 set pastetoggle=<F2>
 set showmode
 " # by default, the indent is 2 spaces. 
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-
 " # for html/rb files, 2 spaces
 autocmd Filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd Filetype eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " # for js/coffee/jade files, 4 spaces
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
