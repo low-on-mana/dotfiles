@@ -114,8 +114,6 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>q ZQ
-nnoremap <leader>wq ZZ
-inoremap <leader>wq <Esc>ZZ
 nnoremap <leader>= gg=G
 nnoremap <leader>h <h
 nnoremap <leader>l >h
