@@ -12,7 +12,6 @@ done
 unset file
 eval "$(rbenv init -)"
 source $HOME/Documents/code_la/erlp/activate
-set -o vi
 
 alias gs='git status '
 alias ga='git add '
@@ -34,3 +33,4 @@ alias v='vim '
 alias dp='cd /Users/anoop/Documents/code_la/ruby/driver-portal-3'
 alias is='cd /Users/anoop/Documents/code_la/ruby/insurance-service'
 alias rs='rails s -p4567'
+alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
