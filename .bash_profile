@@ -12,6 +12,7 @@ done
 unset file
 eval "$(rbenv init -)"
 source $HOME/Documents/code_la/erlp/activate
+export GREP_OPTIONS='--color=always'
 
 alias gs='git status '
 alias ga='git add '

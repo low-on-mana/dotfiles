@@ -23,6 +23,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'thoughtbot/vim-rspec'
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
 " 
@@ -108,7 +109,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 
 let mapleader=";"
+
 inoremap <leader><leader> <Esc>
+vnoremap <leader><leader> <Esc>
 inoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
@@ -155,6 +158,7 @@ autocmd Filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd Filetype slim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " # for js/coffee/jade files, 4 spaces
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
