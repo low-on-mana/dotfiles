@@ -13,7 +13,11 @@ unset file
 eval "$(rbenv init -)"
 source $HOME/Documents/code_la/erlp/activate
 export GREP_OPTIONS='--color=always'
+export JRUBY_OPTS='--dev'
 
+alias gsts='git stash save -u'
+alias gstl='git stash list'
+alias gstp='git stash pop'
 alias gs='git status '
 alias ga='git add '
 alias gap='git add -p .'
@@ -35,3 +39,5 @@ alias dp='cd /Users/anoop/Documents/code_la/ruby/driver-portal-3'
 alias is='cd /Users/anoop/Documents/code_la/ruby/insurance-service'
 alias rs='rails s -p4567'
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias ts='nohup theine_server &'
+alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
