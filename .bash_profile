@@ -1,7 +1,7 @@
 # Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
-export PATH
+export PATH=$PATH:~/.cache/rebar3/bin
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -13,7 +13,9 @@ unset file
 eval "$(rbenv init -)"
 source $HOME/Documents/code_la/erlp/activate
 export GREP_OPTIONS='--color=always'
-export JRUBY_OPTS='--dev'
+# export JRUBY_OPTS='--dev'
+HISTFILESIZE=100000
+HISTSIZE=100000
 
 alias gsts='git stash save -u'
 alias gstl='git stash list'

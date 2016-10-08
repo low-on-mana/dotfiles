@@ -84,8 +84,8 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/](node_modules|target|dist)|(\.(git|svn|swp))$',
-			\ 'file': '\v\.(cache|exe|so|dll)$',
+			\ 'dir':  '\v[\/](node_modules|target|dist|deps)|(\.(git|svn|swp))$',
+			\ 'file': '\v\.(cache|exe|so|dll|beam)$',
 			\ }
 
 " set statusline+=%#warningmsg#

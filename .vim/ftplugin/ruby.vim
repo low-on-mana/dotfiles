@@ -9,4 +9,4 @@ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-nnoremap <Leader>lt ysW)ilet<Esc>lli:<Esc>f=xdiwi <Esc>wys${
+nnoremap <Leader>e ^ilet(:<Esc>ea)<Esc>wxxi{ <Esc>$a }<Esc><CR>
