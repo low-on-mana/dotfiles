@@ -2,5 +2,8 @@ set editing-mode vi
 set bell-style none
 $if mode=vi
     set keymap vi-insert       
-    ";;": vi-movement-mode     
+    ",,": vi-movement-mode     
+	"\C-l": clear-screen
+	"\C-a": beginning-of-line
+	"\C-e": end-of-line
 $endif

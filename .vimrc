@@ -108,7 +108,7 @@ let g:syntastic_ruby_exec = '/Users/anoop/.rbenv/versions/2.3.1/bin/ruby'
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 
-let mapleader=";"
+let mapleader=","
 
 inoremap <leader><leader> <Esc>
 vnoremap <leader><leader> <Esc>
