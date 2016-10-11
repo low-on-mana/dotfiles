@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,22 +88,6 @@ export PATH=$PATH:~/.cache/rebar3/bin
 eval "$(rbenv init -)"
 source $HOME/Documents/code_la/erlp/activate
 
-alias gsts='git stash save -u'
-alias gstl='git stash list'
-alias gstp='git stash pop'
-alias gs='git status '
-alias ga='git add '
-alias gap='git add -p .'
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias gp='git push'
-alias gco='git checkout '
-alias gpl='git pull '
-alias gm='git merge '
-alias gl='git log '
-alias gk='gitk --all&'
-alias gx='gitx --all'
 alias fn='find . -name '
 alias v='vim '
 
@@ -116,7 +100,3 @@ alias k='oathtool --totp -b atnyoeb6mocozg5s | pbcopy'
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias ts='nohup theine_server &'
 alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
-
-bindkey -v
-bindkey ';;' vi-cmd-mode
-bindkey "^R" history-incremental-pattern-search-backward
