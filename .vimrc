@@ -24,6 +24,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-fugitive'
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
 " 
@@ -117,6 +118,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>q ZQ
+nnoremap <leader>qa :qa<CR>
 nnoremap <leader>wq ZZ
 inoremap <leader>wq <Esc>ZZ
 nnoremap <leader>= gg=G :%s/,\(\S\)/, \1/g<CR>

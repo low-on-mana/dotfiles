@@ -1,0 +1,7 @@
+bind -v
+bind '\t' rl_complete
+bind ',,' vi-command-mode
+bind '^L' ed-clear-screen
+bind '^R' em-inc-search-prev
+bind '^A' ed-move-to-beg
+bind '^E' ed-move-to-end

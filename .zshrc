@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 
-# Path to your oh-my-zsh installation.
+ #Path to your oh-my-zsh installation.
 export ZSH=/Users/anoop/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -94,9 +95,34 @@ alias v='vim '
 #
 # Project related
 alias dp='cd /Users/anoop/Documents/code_la/ruby/driver-portal-3'
+alias pd='cd /Users/anoop/Documents/code_la/project_doto'
 alias is='cd /Users/anoop/Documents/code_la/ruby/insurance-service'
 alias rs='rails s -p4567'
 alias k='oathtool --totp -b atnyoeb6mocozg5s | pbcopy'
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias ts='nohup theine_server &'
 alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
+
+function swap()         
+{
+	local TMPFILE=tmp.$$
+	mv "$1" $TMPFILE
+	mv "$2" "$1"
+	mv $TMPFILE "$2"
+}
+#
+#arwork
+echo "                                   __"
+echo "                               _.-~  )"
+echo "                    _..--~~~~,'   ,-/     _"
+echo "                 .-'. . . .'   ,-','    ,' )"
+echo "               ,'. . . _   ,--~,-'__..-'  ,'"
+echo "             ,'. . .  (@)' ---~~~~      ,'"
+echo "            /. . . . '~~             ,-'"
+echo "           /. . . . .             ,-'"
+echo "          ; . . . .  - .        ,'"
+echo "         : . . . .       _     / "
+echo "        . . . . .          \`-.:"
+echo "       . . . ./  - .          )"
+echo "      .  . . |  _____..---.._/ _____"
+echo "~---~~~~----~~~~             ~~"
