@@ -19,12 +19,15 @@ Plugin 'othree/html5.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-skeletons'
+Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
 " 
@@ -57,7 +60,6 @@ syntax on
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-autocmd FileType erlang let g:ycm_cache_omnifunc = 0
 autocmd FileType c,cpp,java,php,ruby,python,javascript,typescript let g:ycm_cache_omnifunc = 1
 let g:ycm_semantic_triggers =  {
 			\   'c' : ['->', '.'],
@@ -85,7 +87,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/](node_modules|target|dist|deps)|(\.(git|svn|swp))$',
+			\ 'dir':  '\v[\/](_rel|node_modules|target|dist|deps)|(\.(git|svn|swp))$',
 			\ 'file': '\v\.(cache|exe|so|dll|beam)$',
 			\ }
 
@@ -118,9 +120,9 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>q ZQ
-nnoremap <leader>qa :qa<CR>
-nnoremap <leader>wq ZZ
-inoremap <leader>wq <Esc>ZZ
+" nnoremap <leader>qa :qa<CR>
+" nnoremap <leader>wq ZZ
+" inoremap <leader>wq <Esc>ZZ
 nnoremap <leader>= gg=G :%s/,\(\S\)/, \1/g<CR>
 inoremap <leader>1 <Esc>1gt
 inoremap <leader>2 <Esc>2gt
