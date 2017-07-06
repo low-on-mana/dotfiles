@@ -27,7 +27,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
+Plugin 't0il3ts0ap/iterm-start'
+"
+"
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
 " 
@@ -82,12 +84,11 @@ let g:ycm_complete_in_strings = 1 " Completion in stringset nu
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf = '~/Documents/git/dotfiles/.ycm_extra_conf.py'
 
-
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/](_rel|node_modules|target|dist|deps)|(\.(git|svn|swp))$',
+			\ 'dir':  '\v[\/](_rel|node_modules|target|dist|deps|build)|(\.(git|svn|swp))$',
 			\ 'file': '\v\.(cache|exe|so|dll|beam)$',
 			\ }
 
@@ -102,8 +103,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d' "Background server for eslint
-let g:syntastic_ruby_exec = '/Users/anoop/.rbenv/versions/2.3.1/bin/ruby'
-
+autocmd FileType ruby,eruby let g:syntastic_ruby_exec = '/Users/anoop/.rbenv/versions/2.3.1/bin/ruby'
+autocmd FileType ruby,eruby let g:ruby_path = system('echo $HOME/.rbenv/shims')
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " let g:ruby_debugger_debug_mode = 1
 " let g:ruby_debugger_spec_path = 'rspec'
 " let g:ruby_debugger_default_script = 'rails s -p4567'
@@ -120,6 +124,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>q ZQ
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 " nnoremap <leader>qa :qa<CR>
 " nnoremap <leader>wq ZZ
 " inoremap <leader>wq <Esc>ZZ
@@ -146,6 +151,7 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>] gt
 nnoremap <leader>[ gT
+nnoremap <leader>; <C-W>w
 
 "NonLeader bindings
 nnoremap Q i<CR><Esc>k$
@@ -172,5 +178,6 @@ set t_Co=256
 set laststatus=2
 set nu
 set clipboard=unnamed
-colorscheme autumn
-" Put your non-Plugin stuff after this line
+set binary
+set noeol
+colorscheme apprentice

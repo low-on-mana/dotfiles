@@ -87,14 +87,17 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/.cache/rebar3/bin
 eval "$(rbenv init -)"
-source $HOME/Documents/code_la/erlp/activate
+# source $HOME/Documents/code_la/erl_19.3/activate
 
 alias fn='find . -name '
 alias v='vim '
+alias vn='vim -u NONE '
 
 #
 # Project related
 alias dp='cd /Users/anoop/Documents/code_la/ruby/driver-portal-3'
+alias fp='cd /Users/anoop/Documents/code_la/ruby/finance-portal'
+alias ws='cd /Users/anoop/Documents/code_la/ruby/withdrawal_service'
 alias pd='cd /Users/anoop/Documents/code_la/project_snakes_and_nerds'
 alias is='cd /Users/anoop/Documents/code_la/ruby/insurance-service'
 alias rs='JRUBY_OPTS="-J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC" rails s -p4567'
@@ -110,7 +113,7 @@ function swap()
 	mv $TMPFILE "$2"
 }
 
-#arwork
+#artwork
 echo "                                   __"
 echo "                               _.-~  )"
 echo "                    _..--~~~~,'   ,-/     _"
