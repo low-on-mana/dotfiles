@@ -170,10 +170,13 @@ autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype slim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
+
 " # for js/coffee/jade files, 4 spaces
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype coffeescript setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd Filetype jade setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd Filetype erlang setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+
 set t_Co=256
 set laststatus=2
 set nu

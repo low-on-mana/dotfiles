@@ -4,6 +4,7 @@ nnoremap <F10> :!ctags -R --languages=ruby --exclude=.git --exclude=log <CR>
 nnoremap <F11> :!ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)<CR>
 " let g:rspec_command = "!theine rspec {spec}"
 let g:rspec_command = ":ItermStartSplit bundle exec rspec {spec}"
+" let g:rspec_command = ":ItermStartSplit theine rspec {spec}"
 "
 " RSpec.vim mappings
 nnoremap <Leader>t :w <CR> :call RunCurrentSpecFile()<CR>

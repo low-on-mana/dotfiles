@@ -4,7 +4,7 @@ export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 
  #Path to your oh-my-zsh installation.
 export ZSH=/Users/anoop/.oh-my-zsh
-
+export PYTHONSTARTUP=~/.pythonrc
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:~/.cache/rebar3/bin
+export JRUBY_OPTS="-Xcompile.invokedynamic=false -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-noverify -Xcompile.mode=OFF -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC"
 eval "$(rbenv init -)"
 # source $HOME/Documents/code_la/erl_19.3/activate
 
