@@ -17,17 +17,19 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'othree/html5.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-skeletons'
 Plugin 'vim-erlang/vim-erlang-tags'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 't0il3ts0ap/iterm-start'
+Plugin 'slim-template/vim-slim'
 "
 "
 " Plugin 'astashov/vim-ruby-debugger'
@@ -92,22 +94,19 @@ let g:ctrlp_custom_ignore = {
 			\ 'file': '\v\.(cache|exe|so|dll|beam)$',
 			\ }
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d' "Background server for eslint
-autocmd FileType ruby,eruby let g:syntastic_ruby_exec = '/Users/anoop/.rbenv/versions/2.3.1/bin/ruby'
-autocmd FileType ruby,eruby let g:ruby_path = system('echo $HOME/.rbenv/shims')
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+let g:ruby_path = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
+let g:syntastic_ruby_exec = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
+let g:syntastic_ruby_checkers = ['mri']
+let g:rubycomplete_buffer_loading = 1 
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
 " let g:ruby_debugger_debug_mode = 1
 " let g:ruby_debugger_spec_path = 'rspec'
 " let g:ruby_debugger_default_script = 'rails s -p4567'
@@ -179,7 +178,8 @@ autocmd Filetype erlang setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 set t_Co=256
 set laststatus=2
-set nu
+set number
+" set relativenumber
 set clipboard=unnamed
 set binary
 set noeol

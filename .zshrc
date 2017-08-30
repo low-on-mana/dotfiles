@@ -101,9 +101,9 @@ alias fp='cd /Users/anoop/Documents/code_la/ruby/finance-portal'
 alias ws='cd /Users/anoop/Documents/code_la/ruby/withdrawal_service'
 alias pd='cd /Users/anoop/Documents/code_la/project_snakes_and_nerds'
 alias is='cd /Users/anoop/Documents/code_la/ruby/insurance-service'
-alias rs='JRUBY_OPTS="-J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC" rails s -p4567'
+alias rs='rails s -p4567'
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias ts='nohup theine_server &'
+# alias ts='nohup theine_server &'
 alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
 
 function swap()         
