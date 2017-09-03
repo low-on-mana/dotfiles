@@ -1,3 +1,13 @@
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ruby_mri_exec = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
+"
+"Used by vim-ruby and macvim's ruby.vim 
+let g:ruby_path = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
+
+let g:rubycomplete_buffer_loading = 1 
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
 inoremap <F9> <Esc>:!rspec %<CR>
 nnoremap <F9> :!rspec %<CR>
 nnoremap <F10> :!ctags -R --languages=ruby --exclude=.git --exclude=log <CR>

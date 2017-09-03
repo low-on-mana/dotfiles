@@ -30,7 +30,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 't0il3ts0ap/iterm-start'
 Plugin 'slim-template/vim-slim'
-"
+
 "
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
@@ -100,24 +100,6 @@ endif
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d' "Background server for eslint
-let g:syntastic_ruby_mri_exec = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
-let g:syntastic_ruby_checkers = ['mri']
-
-"Used by vim-ruby and macvim's ruby.vim 
-let g:ruby_path = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
-
-let g:rubycomplete_buffer_loading = 1 
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-" let g:ruby_debugger_debug_mode = 1
-" let g:ruby_debugger_spec_path = 'rspec'
-" let g:ruby_debugger_default_script = 'rails s -p4567'
-" let g:ruby_debugger_no_maps = 1
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
 
 let mapleader=","
 
