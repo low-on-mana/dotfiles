@@ -105,7 +105,7 @@ alias rs='rails s -p4567'
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 # alias ts='nohup theine_server &'
 alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
-
+alias ed='/Users/anoop/.p2/pool/plugins/org.eclim_2.7.0/bin/eclimd'
 function swap()         
 {
 	local TMPFILE=tmp.$$

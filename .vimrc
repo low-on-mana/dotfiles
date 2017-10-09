@@ -30,7 +30,10 @@ Plugin 'tpope/vim-repeat'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 't0il3ts0ap/iterm-start'
 Plugin 'slim-template/vim-slim'
-
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-fireplace'
+Plugin 'victorfeijo/binding-pry-vim'
+Plugin 'dkprice/vim-easygrep'
 "
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
@@ -70,9 +73,10 @@ let g:ycm_semantic_triggers =  {
 			\   'objc' : ['->', '.'],
 			\   'ocaml' : ['.', '#'],
 			\   'cpp,objcpp' : ['->', '.', '::'],
+			\   'java' : ['.', '::'],
 			\   'perl' : ['->'],
 			\   'php' : ['->', '::'],
-			\   'cs,java,javascript,d,python,perl6,scala,vb,elixir,go,typescript' : ['.'],
+			\   'cs,javascript,d,python,perl6,scala,vb,elixir,go,typescript' : ['.'],
 			\   'vim' : ['re![_a-zA-Z]+[_\w]*\.'],
 			\   'ruby' : ['.', '::'],
 			\   'lua' : ['.', ':'],
@@ -100,6 +104,8 @@ endif
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
+
+let g:EasyGrepFilesToExclude="tags,.svn,.git,node_modules"
 
 let mapleader=","
 
@@ -156,12 +162,13 @@ autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype slim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
-
 " # for js/coffee/jade files, 4 spaces
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype coffeescript setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd Filetype jade setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd Filetype erlang setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd Filetype java setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd Filetype groovy setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 set t_Co=256
 set laststatus=2
