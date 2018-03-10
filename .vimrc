@@ -34,6 +34,13 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fireplace'
 Plugin 'victorfeijo/binding-pry-vim'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'fatih/vim-go'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/rainbow_parentheses.vim'
+"
 "
 " Plugin 'astashov/vim-ruby-debugger'
 " The following are examples of different formats supported.
@@ -104,14 +111,16 @@ endif
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
+let g:syntastic_go_checkers = ['golint']
 
-let g:EasyGrepFilesToExclude="tags,.svn,.git,node_modules"
-
+let g:EasyGrepFilesToExclude='tags,.svn,.git,node_modules'
+let g:EasyGrepRecursive=1
+let g:EasyGrepCommand='ag'
 let mapleader=","
 
-inoremap <leader><leader> <Esc>
+" inoremap <leader><leader> <Esc>
 vnoremap <leader><leader> <Esc>
-inoremap <leader>w <Esc>:w<CR>
+" inoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
@@ -121,17 +130,19 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 " nnoremap <leader>wq ZZ
 " inoremap <leader>wq <Esc>ZZ
 nnoremap <leader>= gg=G :%s/,\(\S\)/, \1/g<CR>
-inoremap <leader>1 <Esc>1gt
-inoremap <leader>2 <Esc>2gt
-inoremap <leader>3 <Esc>3gt
-inoremap <leader>4 <Esc>4gt
-inoremap <leader>5 <Esc>5gt
-inoremap <leader>6 <Esc>6gt
-inoremap <leader>7 <Esc>7gt
-inoremap <leader>8 <Esc>8gt
-inoremap <leader>9 <Esc>9gt
-inoremap <leader>] <Esc>gt
-inoremap <leader>[ <Esc>gT
+" inoremap <leader>1 <Esc>1gt
+" inoremap <leader>2 <Esc>2gt
+" inoremap <leader>3 <Esc>3gt
+" inoremap <leader>4 <Esc>4gt
+" inoremap <leader>5 <Esc>5gt
+" inoremap <leader>6 <Esc>6gt
+" inoremap <leader>7 <Esc>7gt
+" inoremap <leader>8 <Esc>8gt
+" inoremap <leader>9 <Esc>9gt
+" inoremap <leader>] gt
+" inoremap <leader>[ gT
+nnoremap <leader>] gt
+nnoremap <leader>[ gT
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -141,13 +152,23 @@ nnoremap <leader>6 6gt
 nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
-nnoremap <leader>] gt
-nnoremap <leader>[ gT
-nnoremap <leader>; <C-W>w
-
+" nnoremap <leader>; <C-W>w
+nnoremap <Leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"
 "NonLeader bindings
 nnoremap Q i<CR><Esc>k$
 nnoremap <F2> :set invpaste paste?<CR>
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+"next / prev
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprev<CR>
+nnoremap [c :cnext<CR>
+nnoremap ]c :cprev<CR>
 
 set pastetoggle=<F2>
 set showmode
@@ -161,6 +182,7 @@ autocmd Filetype eruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd Filetype slim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd Filetype clojure setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " # for js/coffee/jade files, 4 spaces
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
@@ -177,4 +199,12 @@ set number
 set clipboard=unnamed
 set binary
 set noeol
-colorscheme apprentice
+set background=dark
+set ignorecase
+set smartcase
+colorscheme hybrid
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

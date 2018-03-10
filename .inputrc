@@ -2,7 +2,6 @@ set editing-mode vi
 set keymap vi-command
 "\C-l": clear-screen
 set keymap vi-insert
-",,": vi-movement-mode     
 "\C-l": clear-screen
 "\C-a": beginning-of-line
 "\C-e": end-of-line

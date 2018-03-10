@@ -5,6 +5,11 @@ export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
  #Path to your oh-my-zsh installation.
 export ZSH=/Users/anoop/.oh-my-zsh
 export PYTHONSTARTUP=~/.pythonrc
+GOPATH=/Users/anoop/Documents/code_la/gopay/golang
+export GOPATH
+PATH="${PATH}:${GOPATH}/bin"
+export PATH
+#
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -52,7 +57,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode rake)
+plugins=(fasd git vi-mode rake zsh-autosuggestions docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:~/.cache/rebar3/bin
 export JRUBY_OPTS="-Xcompile.invokedynamic=false -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-noverify -Xcompile.mode=OFF -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC"
 eval "$(rbenv init -)"
+eval "$(fasd --init auto)"
 # source $HOME/Documents/code_la/erl_19.3/activate
 
 alias fn='find . -name '
@@ -96,13 +102,10 @@ alias vn='vim -u NONE '
 
 #
 # Project related
-alias dp='cd /Users/anoop/Documents/code_la/ruby/driver-portal-3'
-alias fp='cd /Users/anoop/Documents/code_la/ruby/finance-portal'
-alias ws='cd /Users/anoop/Documents/code_la/ruby/withdrawal_service'
+alias w='cd /Users/anoop/Documents/code_la/gopay'
 alias pd='cd /Users/anoop/Documents/code_la/project_snakes_and_nerds'
-alias is='cd /Users/anoop/Documents/code_la/ruby/insurance-service'
-alias rs='rails s -p4567'
-alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias rs='bundle exec rails s -p4567'
+alias pg='brew services start postgresql'
 # alias ts='nohup theine_server &'
 alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
 alias ed='/Users/anoop/.p2/pool/plugins/org.eclim_2.7.0/bin/eclimd'
@@ -114,18 +117,60 @@ function swap()
 	mv $TMPFILE "$2"
 }
 
-#artwork
-echo "                                   __"
-echo "                               _.-~  )"
-echo "                    _..--~~~~,'   ,-/     _"
-echo "                 .-'. . . .'   ,-','    ,' )"
-echo "               ,'. . . _   ,--~,-'__..-'  ,'"
-echo "             ,'. . .  (@)' ---~~~~      ,'"
-echo "            /. . . . '~~             ,-'"
-echo "           /. . . . .             ,-'"
-echo "          ; . . . .  - .        ,'"
-echo "         : . . . .       _     / "
-echo "        . . . . .          \`-.:"
-echo "       . . . ./  - .          )"
-echo "      .  . . |  _____..---.._/ _____"
-echo "~---~~~~----~~~~             ~~"
+# ZSH auto suggestions color coding
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=54"
+
+#artwork kong
+# echo "════════════════════███████"
+# echo "═══════════════════█████████"
+# echo "══════════════════███████████"
+# echo "═════════════════███░░███░░███"
+# echo "════════════════███░░░░█░░░░░██"
+# echo "════════════█████░░░███████░░░████"
+# echo "═══════════█░░░████░█░█░█░█░███░░░█"
+# echo "═══════════█░░░███░░███░███░░██░░░█"
+# echo "═════════███░░░███░░░░░░░░░░░██░░░███"
+# echo "═════════█████░░░░░░░░███░░░░░░░█████"
+# echo "═══════██████░░░░░░░░░░░░░░░░░░░░██████"
+# echo "══════███████░░░░█████████████░░░███████"
+# echo "═══██████████░░░█░░░░░░░░░░░░░█░░████████"
+# echo "══██████████████░░░░░░░░░░░░░░░██████████"
+# echo "═███████████████░░░░░░░░░░░░░░░███████████"
+# echo "═█████████████████░░░░░░░░░░░░█████████████"
+# echo "═██████████████████░░░░░░░░░░██████████████"
+# echo "═██████████████████████████████████████████"
+# echo "═██████████████░░░██████████░░░████████████"
+# echo "══█████████████░░░░░░████░░░░░░████████████"
+# echo "═══█████████████░█░░░░██░░░░█░████████████"
+# echo "════█████████████░░░░░██░░░░░████████████"
+# echo "══════██████████░█░░░░██░░░░█░██████████"
+# echo "════════████████░█░░░░░░░░░░█░████████"
+# echo "═══════████████░░░░░░█░░█░░░░░░████████"
+# echo "═══════██████████████░░░░██████████████"
+# echo "══════███████████░░░░░░░░░░░░███████████"
+# echo "════█████████████░░░░█░█░░░░░████████████"
+# echo "═══███████████████░░█░█░█░░░██████████████"
+# echo "═══███████████████████████████████████████"
+# echo "═══███████████████████████████████████████"
+# echo "═══████████████████════════███████████████"
+# echo "════█████████████════════════████████████"
+# echo "════████████████══════════════███████████"
+# echo "═████░░███░░░██═══════════════██░░░███░░████"
+# echo "█░░░░░█░░░░██░█═══════════════█░██░░░░█░░░░░█"
+# echo "██████████████═════════════════██████████████"
+#
+#artwork flipper
+# echo "                                   __"
+# echo "                               _.-~  )"
+# echo "                    _..--~~~~,'   ,-/     _"
+# echo "                 .-'. . . .'   ,-','    ,' )"
+# echo "               ,'. . . _   ,--~,-'__..-'  ,'"
+# echo "             ,'. . .  (@)' ---~~~~      ,'"
+# echo "            /. . . . '~~             ,-'"
+# echo "           /. . . . .             ,-'"
+# echo "          ; . . . .  - .        ,'"
+# echo "         : . . . .       _     / "
+# echo "        . . . . .          \`-.:"
+# echo "       . . . ./  - .          )"
+# echo "      .  . . |  _____..---.._/ _____"
+# echo "~---~~~~----~~~~             ~~"
