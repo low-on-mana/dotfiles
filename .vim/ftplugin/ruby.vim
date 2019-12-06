@@ -1,8 +1,10 @@
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ruby_mri_exec = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
+" let g:syntastic_ruby_checkers = ['mri']
+" let g:syntastic_ruby_mri_exec = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
 "
 "Used by vim-ruby and macvim's ruby.vim 
 let g:ruby_path = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
+
+let g:ale_ruby_ruby_executable = "/Users/anoop/.rbenv/versions/2.3.1/bin/ruby"
 
 let g:rubycomplete_buffer_loading = 1 
 let g:rubycomplete_classes_in_global = 1

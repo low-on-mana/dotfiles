@@ -12,7 +12,7 @@
     },
 	"rules": {
 		"react/prop-types": 0,
-		"default-case": "off",
+		"default-case": 0,
 		"no-console": 0
 	}
 

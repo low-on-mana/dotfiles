@@ -1,14 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 
  #Path to your oh-my-zsh installation.
 export ZSH=/Users/anoop/.oh-my-zsh
 export PYTHONSTARTUP=~/.pythonrc
-GOPATH=/Users/anoop/Documents/code_la/gopay/golang
+GOPATH=/Users/anoop/Documents/code_la/dreamplug/golang
 export GOPATH
 PATH="${PATH}:${GOPATH}/bin"
 export PATH
+
 #
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -57,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fasd git vi-mode rake zsh-autosuggestions docker)
+plugins=(fasd git rake zsh-autosuggestions docker vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,10 +106,32 @@ alias vn='vim -u NONE '
 alias w='cd /Users/anoop/Documents/code_la/gopay'
 alias pd='cd /Users/anoop/Documents/code_la/project_snakes_and_nerds'
 alias rs='bundle exec rails s -p4567'
+alias k="oathtool --totp -b fi632bfhjbsqayaq | tr -d '\n' | pbcopy"
+
+# cex.io
+alias k2="oathtool --totp -b GRLHAZ3VJBGVWUTYERLS4S3UOFMHQ5TC | tr -d '\n' | pbcopy"
+alias k3="oathtool --totp -b 7FDVVNONNRANIEIV | tr -d '\n' | pbcopy"
+alias k3="oathtool --totp -b drdg2wuhgvkdvpa6 | tr -d '\n' | pbcopy"
 alias pg='brew services start postgresql'
 # alias ts='nohup theine_server &'
 alias st='sh ~/Documents/code_la/ruby/scripts/start_all.sh'
 alias ed='/Users/anoop/.p2/pool/plugins/org.eclim_2.7.0/bin/eclimd'
+
+### CUREFIT STARTS
+alias gvstagejump='ssh ubuntu@13.232.184.141'
+alias gvstage1='ssh ubuntu@13.233.123.166'
+alias gvprodjump='ssh ubuntu@35.154.164.169'
+alias gvprod1='ssh ubuntu@13.233.93.37'
+alias gvprod2='ssh ubuntu@13.232.114.8'
+alias gvprod3='ssh ubuntu@52.66.204.25'
+alias gofitstage='ssh anoop@13.232.119.110'
+alias mysqlstage='ssh -i ~/.ssh/curefit-stage.pem ubuntu@stage.curefit.co -fN -L 3306:cfdb.cw5efoqjpxhj.ap-south-1.rds.amazonaws.com:3306'
+alias redisstage='ssh -i  ~/.ssh/curefit-stage.pem -fN -L 6379:curefit.y66lea.0001.aps1.cache.amazonaws.com:6379 ubuntu@stage.curefit.co'
+alias cultstage='ssh -i ~/.ssh/curefit-stage.pem ubuntu@stage.curefit.co -fN -L 5005:cultapi-staging.ap-south-1.elasticbeanstalk.com:80'
+alias mongostage='ssh -i  ~/.ssh/curefit-stage.pem -fN -L 27017:stage.curefit.co:27017 ubuntu@stage.curefit.co'
+alias gofitprod='ssh -i ~/.ssh/gear-staging.pem ubuntu@35.154.122.115'
+### CUREFIT ENDS
+
 function swap()         
 {
 	local TMPFILE=tmp.$$
@@ -118,7 +141,7 @@ function swap()
 }
 
 # ZSH auto suggestions color coding
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=54"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=58"
 
 autoload -U select-bracketed
 autoload -U select-quoted
@@ -133,6 +156,7 @@ for km in visual viopp; do
         bindkey -M $km $c select-bracketed
     done
 done
+
 #artwork kong
 # echo "════════════════════███████"
 # echo "═══════════════════█████████"
@@ -187,3 +211,7 @@ done
 # echo "       . . . ./  - .          )"
 # echo "      .  . . |  _____..---.._/ _____"
 # echo "~---~~~~----~~~~             ~~"
+
+#network
+# sudo lsof -PiTCP -sTCP:LISTEN
+# lsof -n -i4TCP:8080 | grep LISTEN

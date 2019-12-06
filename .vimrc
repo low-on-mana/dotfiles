@@ -14,32 +14,35 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tomasr/molokai'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'othree/html5.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-erlang/vim-erlang-omnicomplete'
-Plugin 'vim-erlang/vim-erlang-skeletons'
-Plugin 'vim-erlang/vim-erlang-tags'
+" Plugin 'vim-syntastic/syntastic'
+" Plugin 'w0rp/ale'
+" Plugin 'vim-erlang/vim-erlang-omnicomplete'
+" Plugin 'vim-erlang/vim-erlang-skeletons'
+" Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'tpope/vim-surround'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'thoughtbot/vim-rspec'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 't0il3ts0ap/iterm-start'
-Plugin 'slim-template/vim-slim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fireplace'
+" Plugin 'tpope/vim-fireplace'
 Plugin 'victorfeijo/binding-pry-vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'w0ng/vim-hybrid'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'ternjs/tern_for_vim'
+Plugin 'godlygeek/tabular'
+"
 "
 "
 " Plugin 'astashov/vim-ruby-debugger'
@@ -111,9 +114,18 @@ endif
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_go_checkers = ['golint']
+" let g:syntastic_go_checkers = ['golint']
 
-let g:EasyGrepFilesToExclude='tags,.svn,.git,node_modules'
+let g:ale_open_list = 'on_save'
+
+" close errorlist (loc list) when main buffer closes
+autocmd QuitPre * if empty(&bt) | lclose | endif
+
+let g:ale_linters = {
+\   'ruby': ['ruby'],
+\}
+
+let g:EasyGrepFilesToExclude='tags,.svn,.git,node_modules,dist'
 let g:EasyGrepRecursive=1
 let g:EasyGrepCommand='ag'
 let mapleader=","
@@ -159,16 +171,23 @@ nnoremap <Leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap Q i<CR><Esc>k$
 nnoremap <F2> :set invpaste paste?<CR>
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
+tnoremap <Esc> <c-\><c-n>
+tnoremap <c-h> <c-\><c-n><c-w>h
+tnoremap <c-j> <c-\><c-n><c-w>j
+tnoremap <c-k> <c-\><c-n><c-w>k
+tnoremap <c-l> <c-\><c-n><c-w>l
+nnoremap <silent> <c-n> :NERDTreeToggle<CR>
 
 "next / prev
 nnoremap ]b :bnext<CR>
 nnoremap [b :bprev<CR>
 nnoremap [c :cnext<CR>
 nnoremap ]c :cprev<CR>
+nnoremap \t :terminal ++curwin<cr>
 
 set pastetoggle=<F2>
 set showmode
@@ -202,6 +221,12 @@ set noeol
 set background=dark
 set ignorecase
 set smartcase
+set backspace=indent,eol,start
+set scrolloff=1
+set shell=/usr/local/bin/zsh
+set encoding=utf-8
+
+set hidden
 colorscheme hybrid
 
 au VimEnter * RainbowParenthesesToggle

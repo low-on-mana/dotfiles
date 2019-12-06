@@ -41,6 +41,14 @@ nnoremap <Leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "Run nearest test
 nnoremap <leader>s :action RunClass<CR>
+" nnoremap <leader>s :action :cursive.testing.actions/run-single-test<CR>
+" nnoremap <leader>t :action :cursive.testing.actions/run-ns-tests<CR>
+
+" Evaluate sexp like in vim-fireplace
+nnoremap cpp :action :cursive.repl.actions/run-top-sexp<CR>
+
+nnoremap <Space> :action HideAllWindows<CR>
+
 "debug nearest test
 nnoremap <leader>d :action DebugClass<CR>
 " Search Everywhere
@@ -49,6 +57,7 @@ nnoremap <C-p> :action GotoFile<CR>
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 " ReRun
 nnoremap <leader>r :action Rerun<CR>
+nnoremap <Leader>e ^ilet(:<Esc>ea)<Esc>wxxi{ <Esc>$a }<Esc><CR>
 
 nnoremap Q i<CR><Esc>k$
 set clipboard+=unnamed
